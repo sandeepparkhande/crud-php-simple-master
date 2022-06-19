@@ -1,0 +1,45 @@
+<html>
+
+<head>
+	<title>Add Data</title>
+</head>
+
+<script>
+	function randomString(length, chars) {
+		var result = '';
+		for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
+		return result;
+	}
+	function generer() {
+		document.getElementById("code").value = randomString(56, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
+	}
+</script>
+
+<body>
+	<a href="index.php">Home</a>
+	<br /><br />
+
+	<form action="add.php" method="post" name="form1">
+		<table width="25%" border="0">
+			<tr>
+				<td>Code</td>
+				<td><input type="text" name="code" id="code" size="56"></td>
+			</tr>
+			<tr>
+				<td>Start Date</td>
+				<td><input type="text" name="startdate"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" name="addCode" value="Add"></td>
+			</tr>
+
+			<tr>
+				<td></td>
+				<td><input type="button" name="generateNumber" value="Generate Random Number" onClick="generer()"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+
+</html>
